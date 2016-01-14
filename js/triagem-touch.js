@@ -202,6 +202,7 @@
                 url: OAuth2.url + '/token',
                 type: 'post',
                 data: data,
+                dataType: 'json',
                 success: function(response) {
                     if (response.error) {
                         showError(response.error_description);
