@@ -2,7 +2,7 @@
 <html ng-app="TriagemTouch">
 <head>
     <meta charset="utf-8" />
-    <title data-i18n="TriagemTouch.title">Triagem Touch | Novo SGA</title>
+    <title data-i18n="TriagemTouch.title">Recepcion Touch | qManager</title>
     <link rel="shortcut icon" href="images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
@@ -22,13 +22,13 @@
             <li>
                 <a href="#config" data-toggle="modal">
                     <span class="glyphicon glyphicon-cog"></span>&nbsp;
-                    <span data-i18n="TriagemTouch.configuration">Configuração</span>
+                    <span data-i18n="TriagemTouch.configuration">Configuración</span>
                 </a>
             </li>
             <li>
                 <a href="javascript:void(0)" ng-click="fullscreen()">
                     <span class="glyphicon glyphicon-fullscreen"></span>&nbsp;
-                    <span data-i18n="TriagemTouch.fullscreen">Fullscreen</span>
+                    <span data-i18n="TriagemTouch.fullscreen">Pantalla Completa</span>
                 </a>
             </li>
         </ul>
@@ -39,7 +39,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" data-i18n="TriagemTouch.configuration">Configuração</h4>
+                    <h4 class="modal-title" data-i18n="TriagemTouch.configuration">Configuración</h4>
                 </div>
                 <div class="modal-body">
                     <form onsubmit="return false">
@@ -50,7 +50,7 @@
                                     <a href="#tab-servidor" role="tab" data-toggle="tab" data-i18n="TriagemTouch.server">Servidor</a>
                                 </li>
                                 <li role="presentation">
-                                    <a href="#tab-servicos" role="tab" data-toggle="tab" data-i18n="TriagemTouch.services">Serviços</a>
+                                    <a href="#tab-servicos" role="tab" data-toggle="tab" data-i18n="TriagemTouch.services">Servicios</a>
                                 </li>
                             </ul>
                             <div class="tab-content">
@@ -71,20 +71,20 @@
                                         <input id="url" type="url" class="form-control" ng-model="url" ng-change="loadUnidades()">
                                     </div>
                                     <div class="form-group">
-                                        <label for="unidade" data-i18n="TriagemTouch.unit">Unidade</label>
+                                        <label for="unidade" data-i18n="TriagemTouch.unit">Unidad</label>
                                         <select id="unidade" class="form-control" ng-model="unidade">
                                             <option value="" data-i18n="TriagemTouch.select">Selecione</option>
                                             <option value="{{u.id}}" ng-repeat="u in unidades" ng-selected="u.id == unidade">{{u.nome}}</option>
                                         </select>
                                     </div>
                                     <fieldset>
-                                        <legend data-i18n="TriagemTouch.access">Acesso</legend>
+                                        <legend data-i18n="TriagemTouch.access">Acceso</legend>
                                         <div class="form-group">
-                                            <label for="username" data-i18n="TriagemTouch.user">Usuário</label>
+                                            <label for="username" data-i18n="TriagemTouch.user">Usuario</label>
                                             <input id="username" type="text" class="form-control" ng-model="usuario">
                                         </div>
                                         <div class="form-group">
-                                            <label for="password" data-i18n="TriagemTouch.password">Senha</label>
+                                            <label for="password" data-i18n="TriagemTouch.password">Contraseña</label>
                                             <input id="password" type="password" class="form-control" ng-model="senha">
                                         </div>
                                         <div class="form-group">
@@ -113,8 +113,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" data-i18n="TriagemTouch.close">Fechar</button>
-                    <button id="config-save" type="button" class="btn btn-primary" ng-click="save()" data-i18n="TriagemTouch.save">Salvar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" data-i18n="TriagemTouch.close">Cancelar</button>
+                    <button id="config-save" type="button" class="btn btn-primary" ng-click="save()" data-i18n="TriagemTouch.save">Guardar</button>
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" data-i18n="TriagemTouch.error.title">Erro</h4>
+                    <h4 class="modal-title" data-i18n="TriagemTouch.error.title">Error</h4>
                 </div>
                 <div class="modal-body">
 
@@ -136,8 +136,8 @@
 
     <div id="layout">
         <div id="header">
-            <h1 data-i18n="TriagemTouch.heading">Triagem touch</h1>
-            <p data-i18n="TriagemTouch.description">Escolha abaixo o serviço que deseja atendimento</p>
+            <h1 data-i18n="TriagemTouch.heading">Recepción touch</h1>
+            <p data-i18n="TriagemTouch.description">Elija a continuación el servicio al que desea acceder</p>
         </div>
         <!-- 
             Lista dos serviços disponíveis
@@ -160,7 +160,7 @@
                 <div class="touch-control convencional">
                     <button class="btn btn-primary btn-lg btn-block" ng-click="distribuiNormal()">
                         <span class="icon icon-left glyphicon glyphicon-print"></span>
-                        <span data-i18n="TriagemTouch.normal">Convencional</span>
+                        <span data-i18n="TriagemTouch.normal">Normal</span>
                     </button>
                 </div>
             </div>
@@ -168,7 +168,7 @@
                 <div class="touch-control prioridade">
                     <button class="btn btn-danger btn-lg btn-block" ng-click="tipoPrioridade()">
                         <span class="icon glyphicon glyphicon-circle-arrow-right"></span>
-                        <span data-i18n="TriagemTouch.priority">Prioridade</span>
+                        <span data-i18n="TriagemTouch.priority">Prioridad</span>
                     </button>
                 </div>
             </div>
